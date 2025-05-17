@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Машинка їздить по колу</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #87CEEB 50%, #4CAF50 50%);
+      font-family: sans-serif;
+    }
 
+    .circle-path {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 10px solid #555;
+      border-radius: 50%;
+      background: #777;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .car-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      animation: drive-car 6s linear infinite;
+      transform-origin: center center;
+    }
+
+    .car {
+      position: absolute;
+      top: -200px;
+      left: -1rem;
+      font-size: 2rem;
+    }
+
+    @keyframes drive-car {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="circle-path">
+    <div class="car-container">
+      <div class="car">🚗</div>
+    </div>
+  </div>
+</body>
+</html>
